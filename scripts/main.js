@@ -18,6 +18,8 @@ const pos_x = 250,pos_y=150
 
 let startTime, elapsedTime, timer
 
+let count_choose = 0
+
 function init(){
     ctx.font = '25px arial black'
     ctx.fillText("Aperte 'Start' para começar um jogo.",50,150)
@@ -37,7 +39,6 @@ function start(){
     if(choose_num != 0)alert(`A resposta anterior era ${choose_num}.`)
 
     choose_num = Math.floor(Math.random()*nums.length)+1
-    
     canvas.style.background = start_color
 
     startTime = Date.now();
@@ -56,11 +57,15 @@ function choose(){
 
     ctx.clearRect(0,0,canvas.width,canvas.height)
 
+    count_choose++
+
     if(num == choose_num){
-        ctx.fillText("Parabéns, você acertou.",pos_x-100,pos_y)
+        ctx.fillText("Parabéns, você acertou.",pos_x-120,pos_y-20)
         clearInterval(timer);
-        ctx.fillText(`Tempo gasto: ${elapsedTime / 1000}s.`,pos_x-100,pos_y+25)
+        ctx.fillText(`Tempo gasto: ${elapsedTime / 1000}s.`,pos_x-120,pos_y+5)
+        ctx.fillText(`Quantidade de tentativas: ${count_choose}.`,pos_x-120,pos_y+30)
         canvas.style.background = start_color
+        count_choose = 0
         return 0
     }
 
