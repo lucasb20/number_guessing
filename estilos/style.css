@@ -15,6 +15,36 @@ header h1{
     border: 1px solid black;
 }
 
+#principal{
+    border: 1px solid black;
+    width: 300px;
+    height: 30px;
+    margin: auto;
+    padding: 10px;
+}
+
+#principal div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#but_start,#but_choose{
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+#num{
+    width: 100px;
+    height: 20px;
+}
+
+#but_start:hover,#but_choose:hover{
+    background-color: lightgray;
+}
+
 footer p{
     margin: 20px;
     text-align: center;
