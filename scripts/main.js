@@ -9,7 +9,6 @@ const hot_color = '#FF7F7F'
 const cold_color = '#ADD8E6'
 const very_hot_color = '#FFA500'
 const very_cold_color = '#87CEEB'
-const nums = []
 let choose_num = 0
 const but_choose = document.querySelector('#but_choose')
 const but_start = document.querySelector('#but_start')
@@ -31,14 +30,10 @@ but_choose.addEventListener('click',choose)
 function start(){
     ctx.clearRect(0,0,canvas.width,canvas.height)
     ctx.fillText("Digite um número.",180,150)
-    nums.length = 0
-    for(let i=1;i<=1000;i++){
-        nums.push(i)
-    }
 
     if(choose_num != 0)alert(`A resposta anterior era ${choose_num}.`)
 
-    choose_num = Math.floor(Math.random()*nums.length)+1
+    choose_num = Math.floor(Math.random()*1000)+1
     canvas.style.background = start_color
 
     startTime = Date.now();
